@@ -11,7 +11,7 @@ without a central authority. Built for a 15-hour hackathon.
 
 ```
 nyayanode/
-├── backend/          # FastAPI API server (Member 3) — YOU ARE HERE
+├── backend/          # FastAPI API server (Member 3)
 ├── agents/           # AI arbitration agent (Member 1)
 ├── scripts/
 │   ├── run.ps1       # Start the backend (Windows)
