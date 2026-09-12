@@ -1,0 +1,9 @@
+﻿node_modules/
+npm-debug.log
+yarn-error.log
+.env
+__pycache__/
+*.pyc
+.DS_Store
+dist/
+build/

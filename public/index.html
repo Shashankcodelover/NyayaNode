@@ -1,0 +1,373 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NyayaNode | AI-Powered Jurisprudence & Legal Intelligence Network</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-icon">⚖️</div>
+        <div class="brand-text">
+          <h1>NyayaNode</h1>
+          <div class="brand-tagline">AI Jurisprudence & Legal Intelligence Network</div>
+        </div>
+      </a>
+
+      <div class="header-badges">
+        <div class="regime-badge">
+          <span class="status-dot"></span>
+          <span>BNS 2023 / BNSS / BSA Matrix Live</span>
+        </div>
+        <div class="regime-badge" style="background: rgba(245, 158, 11, 0.12); border-color: rgba(245, 158, 11, 0.25); color: #fbbf24;">
+          <span>Dual IPC / CrPC / IEA Dual Engine</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Metrics Banner -->
+  <section class="metrics-banner">
+    <div class="metric-card">
+      <div class="metric-icon" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa;">📖</div>
+      <div>
+        <div class="metric-val" id="metric-statutes">18</div>
+        <div class="metric-lbl">Statutes & BNS Offenses</div>
+      </div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">🔄</div>
+      <div>
+        <div class="metric-val" id="metric-procedural">10</div>
+        <div class="metric-lbl">BNSS Procedural Mappings</div>
+      </div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon" style="background: rgba(139, 92, 246, 0.15); color: #c084fc;">🏛️</div>
+      <div>
+        <div class="metric-val" id="metric-precedents">6</div>
+        <div class="metric-lbl">Supreme Court Precedents</div>
+      </div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon" style="background: rgba(16, 185, 129, 0.15); color: #6ee7b7;">🔒</div>
+      <div>
+        <div class="metric-val" id="metric-evidence">2</div>
+        <div class="metric-lbl">Sec 63 BSA Sealed Blocks</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation Tabs -->
+  <div class="nav-tabs-container">
+    <nav class="nav-tabs">
+      <button class="nav-tab-btn active" data-tab="tab-statutes">
+        <span>📖</span> BNS ↔ IPC Matrix
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-fir">
+        <span>⚡</span> AI Incident & FIR Reasoning
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-contract">
+        <span>📑</span> Smart Contract Auditor
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-precedents">
+        <span>🏛️</span> Supreme Court Precedents
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-vault">
+        <span>🔒</span> Sec 63 BSA Evidence Vault
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-moot">
+        <span>⚖️</span> Moot Courtroom Simulator
+      </button>
+    </nav>
+  </div>
+
+  <!-- Tab Content Area -->
+  <main class="tab-content-area">
+
+    <!-- TAB 1: BNS ↔ IPC STATUTORY MATRIX -->
+    <div class="tab-pane active" id="tab-statutes">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">📖 Dual Legal Matrix: BNS 2023 & IPC 1860</div>
+            <div class="panel-subtitle">Instant cross-conversion, criminal elements, cognizable classification, and trial jurisdiction</div>
+          </div>
+        </div>
+
+        <div class="search-box" style="margin-bottom: 1.5rem;">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="statute-search-input" class="search-input" placeholder="Search by section (e.g. 302, 103, 420), offense title, crime keyword, or category...">
+        </div>
+
+        <div id="statutes-container" class="statutes-grid">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- Procedural Switchboard -->
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">🔄 Criminal Procedural Switchboard: BNSS 2023 vs CrPC 1973 & BSA 2023 vs IEA</div>
+            <div class="panel-subtitle">Key procedural transitions affecting arrest, remand, electronic evidence, and bail</div>
+          </div>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="procedural-table">
+            <thead>
+              <tr>
+                <th>BNSS / BSA Section</th>
+                <th>CrPC / IEA Section</th>
+                <th>Statutory Subject</th>
+                <th>Domain</th>
+                <th>Procedural Impact & Landmark Rules</th>
+              </tr>
+            </thead>
+            <tbody id="procedural-tbody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: AI INCIDENT & FIR REASONING -->
+    <div class="tab-pane" id="tab-fir">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">⚡ Autonomous Incident Evaluator & FIR Assistant</div>
+            <div class="panel-subtitle">Translates factual narratives into applicable BNS/IPC offenses, assesses cognizable status, and determines bail probability</div>
+          </div>
+        </div>
+
+        <div class="analyzer-grid">
+          <div>
+            <label style="font-size: 0.85rem; font-weight: 600; color: #94a3b8; display: block; margin-bottom: 0.5rem;">
+              FACTUAL INCIDENT DESCRIPTION / COMPLAINT NARRATIVE:
+            </label>
+            <textarea id="fir-input-text" class="textarea-custom" placeholder="Describe the incident facts in detail (e.g., weapon used, time, location, injuries inflicted, property taken, deception involved, threat communicated)..."></textarea>
+
+            <div style="margin-top: 0.75rem;">
+              <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">QUICK TEST SCENARIOS:</span>
+              <div class="quick-scenario-btns">
+                <button class="scenario-btn" onclick="loadFIRScenario('robbery')">Highway Armed Robbery & Fracture</button>
+                <button class="scenario-btn" onclick="loadFIRScenario('hit_run')">Hit-and-Run Fatal Crash</button>
+                <button class="scenario-btn" onclick="loadFIRScenario('cyber_fraud')">Crypto Investment Fraud & Forgery</button>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.25rem;">
+              <button id="btn-analyze-fir" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 0.85rem;">
+                ⚖️ Analyze Incident & Procedural Safeguards
+              </button>
+            </div>
+          </div>
+
+          <div id="fir-results-container">
+            <div style="text-align: center; padding: 3rem 1.5rem; color: #64748b; background: rgba(15,23,42,0.4); border-radius: 12px; border: 1px dashed rgba(255,255,255,0.08);">
+              <div style="font-size: 2rem; margin-bottom: 0.75rem;">⚖️</div>
+              <div style="font-weight: 600; color: #94a3b8; margin-bottom: 0.25rem;">Ready for Factual Analysis</div>
+              <div style="font-size: 0.8rem;">Enter incident details or select a quick scenario on the left, then click "Analyze Incident".</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: SMART CONTRACT AUDITOR -->
+    <div class="tab-pane" id="tab-contract">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">📑 Smart Legal Contract Risk & Clause Auditor</div>
+            <div class="panel-subtitle">Scans contracts against Indian Contract Act, Section 27 non-compete voidance, and unilateral arbitration traps</div>
+          </div>
+        </div>
+
+        <div class="analyzer-grid">
+          <div>
+            <label style="font-size: 0.85rem; font-weight: 600; color: #94a3b8; display: block; margin-bottom: 0.5rem;">
+              CONTRACT AGREEMENT TEXT:
+            </label>
+            <textarea id="contract-input-text" class="textarea-custom" placeholder="Paste employment agreement, freelance contract, NDA, or vendor terms here..."></textarea>
+
+            <div style="margin-top: 0.75rem;">
+              <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">PRE-SET TEST CONTRACTS:</span>
+              <div class="quick-scenario-btns">
+                <button class="scenario-btn" onclick="loadContractScenario('predatory_employment')">Predatory Employment Agreement</button>
+                <button class="scenario-btn" onclick="loadContractScenario('freelance_uncapped')">Freelance Contract with Uncapped Indemnity</button>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.25rem;">
+              <button id="btn-audit-contract" class="btn btn-gold" style="width: 100%; justify-content: center; padding: 0.85rem;">
+                🔍 Audit Contract Clauses & Generate Redlines
+              </button>
+            </div>
+          </div>
+
+          <div id="contract-results-container">
+            <div style="text-align: center; padding: 3rem 1.5rem; color: #64748b; background: rgba(15,23,42,0.4); border-radius: 12px; border: 1px dashed rgba(255,255,255,0.08);">
+              <div style="font-size: 2rem; margin-bottom: 0.75rem;">📜</div>
+              <div style="font-weight: 600; color: #94a3b8; margin-bottom: 0.25rem;">Contract Risk Scanner Ready</div>
+              <div style="font-size: 0.8rem;">Paste contract text or select a test contract on the left to detect unconscionable clauses.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: SUPREME COURT PRECEDENTS -->
+    <div class="tab-pane" id="tab-precedents">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">🏛️ Supreme Court Constitutional & Criminal Precedents</div>
+            <div class="panel-subtitle">Authoritative ratios on personal liberty (Art 21), arrest safeguards, bail reforms, and contract invalidation</div>
+          </div>
+        </div>
+
+        <div id="precedents-container">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 5: SEC 63 BSA EVIDENCE VAULT -->
+    <div class="tab-pane" id="tab-vault">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">🔒 Section 63 BSA / 65B Cryptographic Evidence Vault</div>
+            <div class="panel-subtitle">Anchors digital evidence (CCTV, exports, chats) with SHA-256 hashes and generates courtroom-admissible Section 63 BSA certificates</div>
+          </div>
+        </div>
+
+        <div class="analyzer-grid">
+          <div>
+            <div style="font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 1rem;">REGISTER NEW DIGITAL EXHIBIT:</div>
+
+            <div style="margin-bottom: 0.85rem;">
+              <label style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Record / Exhibit Name:</label>
+              <input type="text" id="evd-name" class="search-input" style="padding: 0.6rem 0.85rem;" placeholder="e.g. Traffic_Intersection_CCTV_Angle2.mp4" value="Call_Recording_Extortion_Evidence.wav">
+            </div>
+
+            <div style="margin-bottom: 0.85rem;">
+              <label style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Source System / Device Description:</label>
+              <input type="text" id="evd-device" class="search-input" style="padding: 0.6rem 0.85rem;" placeholder="e.g. Dell Precision 7820 Server IP:10.0.1.20" value="OnePlus 11 5G Audio Rec File ID:OP11-2026-09-12">
+            </div>
+
+            <div style="margin-bottom: 0.85rem;">
+              <label style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Certifying Custodian / Officer Name:</label>
+              <input type="text" id="evd-custodian" class="search-input" style="padding: 0.6rem 0.85rem;" placeholder="e.g. Insp. Vikramaditya Singh" value="Adv. Rajeshwari Rao (Legal Custodian)">
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+              <label style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Digital Content Payload / Hash Input:</label>
+              <textarea id="evd-content" class="textarea-custom" style="min-height: 100px;" placeholder="Paste raw text, transcript, or digital binary hash string here...">AUDIO_TRANSCRIPT_EVIDENCE_RECORDING_20260912_DEFENDANT_THREAT_EXCHANGE</textarea>
+            </div>
+
+            <button id="btn-register-evidence" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 0.85rem;">
+              🔒 Cryptographically Anchor & Issue Section 63 BSA Certificate
+            </button>
+          </div>
+
+          <div>
+            <div style="font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 1rem;">TAMPER VERIFICATION TOOL:</div>
+            <div style="background: rgba(15,23,42,0.6); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem; margin-bottom: 1.25rem;">
+              <div style="margin-bottom: 0.85rem;">
+                <label style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Evidence ID:</label>
+                <input type="text" id="verify-evd-id" class="search-input" style="padding: 0.6rem 0.85rem;" placeholder="e.g. NYAYA-EVD-..." value="NYAYA-EVD-...">
+              </div>
+              <div style="margin-bottom: 0.85rem;">
+                <label style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Content to Test against Registered Hash:</label>
+                <input type="text" id="verify-evd-content" class="search-input" style="padding: 0.6rem 0.85rem;" placeholder="Enter content to verify if it matches registered hash exactly">
+              </div>
+              <button id="btn-verify-evidence" class="btn" style="width: 100%; justify-content: center; padding: 0.65rem;">
+                🧪 Verify Cryptographic Integrity
+              </button>
+              <div id="verify-result-area" style="margin-top: 1rem;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certificate Display Area -->
+        <div id="certificate-display-area" style="display: none; margin-top: 1.5rem;">
+          <div class="panel" style="border-color: #f59e0b;">
+            <div class="panel-header">
+              <div>
+                <div class="panel-title" style="color: #fbbf24;">📜 Official Section 63 BSA Court Certificate of Electronic Record</div>
+                <div class="panel-subtitle">Certified in compliance with Supreme Court ratio in Arjun Panditrao Khotkar (2020)</div>
+              </div>
+              <button class="btn btn-gold" onclick="copyCertificate()">📋 Copy Certificate</button>
+            </div>
+            <pre id="certificate-text" class="certificate-view"></pre>
+          </div>
+        </div>
+
+        <!-- Ledger Table -->
+        <div style="margin-top: 1.5rem;">
+          <div style="font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">IMMUTABLE CUSTODY BLOCKS:</div>
+          <div style="overflow-x: auto;">
+            <table class="procedural-table">
+              <thead>
+                <tr>
+                  <th>Evidence ID</th>
+                  <th>Exhibit Name & Source</th>
+                  <th>Certifying Custodian</th>
+                  <th>SHA-256 Hash</th>
+                  <th>Chain Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="evidence-ledger-tbody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 6: MOOT COURTROOM SIMULATOR -->
+    <div class="tab-pane" id="tab-moot">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">⚖️ Interactive Moot Courtroom & Judicial Simulator</div>
+            <div class="panel-subtitle">Examine prosecution arguments vs defense counter-arguments with authoritative judicial bench rulings</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <label style="font-size: 0.8rem; color: #94a3b8; font-weight: 600;">SELECT DISPUTE:</label>
+            <select id="moot-case-select" class="search-input" style="padding: 0.4rem 0.85rem; width: auto; font-size: 0.85rem;">
+              <option value="0">Arrest Legality without Notice (BNSS Sec 35)</option>
+              <option value="1">Post-Exit Non-Compete Invalidation (ICA Sec 27)</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="moot-case-details">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast-msg"></div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

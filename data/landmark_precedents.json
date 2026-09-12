@@ -1,0 +1,62 @@
+[
+  {
+    "case_title": "Arnesh Kumar v. State of Bihar",
+    "citation": "(2014) 8 SCC 273",
+    "bench": "Chandramauli Kumar Prasad & Pinaki Chandra Ghose, JJ.",
+    "category": "Criminal Procedure & Arrest Guidelines",
+    "applicable_provisions": ["Section 41 CrPC", "Section 35 BNSS", "Section 498A IPC", "Section 85 BNS"],
+    "ratio_decidendi": "Police officers shall not automatically arrest accused when an offense is punishable with imprisonment for a term which may be less than seven years or may extend up to seven years. Investigating officers must record specific reasons satisfying conditions under Section 41(1)(b) CrPC (now Section 35(1)(b) BNSS). Notice of appearance under Section 41A (now BNSS Section 35(3)) must be served within two weeks of complaint institution unless reasons for arrest are explicitly justified in writing to the Magistrate.",
+    "key_safeguard": "Checklist mandatory for all arrests <= 7 years. Failure to comply renders IO liable for departmental action and contempt of High Court.",
+    "tags": ["arrest", "bail", "custody", "police power", "section 41a", "bnss 35"]
+  },
+  {
+    "case_title": "Satender Kumar Antil v. Central Bureau of Investigation",
+    "citation": "(2022) 10 SCC 51",
+    "bench": "Sanjay Kishan Kaul & M.M. Sundresh, JJ.",
+    "category": "Bail Jurisprudence & Under-Trial Reforms",
+    "applicable_provisions": ["Section 436, 437, 438, 439 CrPC", "Section 479, 480, 482, 483 BNSS", "Article 21 Constitution"],
+    "ratio_decidendi": "Bail is the rule and jail is the exception. The court categorized offenses into four distinct categories (A: <= 7 years; B: Life imprisonment / death; C: Special Acts like NDPS, PMLA; D: Economic offenses). For Category A, warrants should not be issued ordinarily without summons first. Pre-trial detention cannot be transformed into punitive incarceration without trial.",
+    "key_safeguard": "Strict timelines: Anticipatory bail applications must be disposed within two weeks; regular bail within two weeks; review of under-trial prisoners eligible for release on personal bond.",
+    "tags": ["bail", "under-trial", "personal bond", "undertrial relief", "bnss 479"]
+  },
+  {
+    "case_title": "Lalita Kumari v. Government of Uttar Pradesh",
+    "citation": "(2014) 2 SCC 1 (Constitution Bench - 5 Judges)",
+    "bench": "P. Sathasivam, CJI, B.S. Chauhan, Ranjana Desai, Ranjan Gogoi, S.A. Bobde, JJ.",
+    "category": "First Information Report (FIR) Mandatory Registration",
+    "applicable_provisions": ["Section 154 CrPC", "Section 173 BNSS"],
+    "ratio_decidendi": "Registration of FIR is mandatory under Section 154 CrPC (Section 173 BNSS) if the information discloses commission of a cognizable offense, and no preliminary inquiry is permissible in such a situation. Preliminary inquiry is permissible only in exceptional classes: matrimonial/family disputes, commercial offenses, medical negligence, corruption cases, or cases where there is abnormal delay of over 3 months.",
+    "key_safeguard": "Preliminary inquiry must conclude strictly within 14 days (reduced to 7 days in recent practice). Police officer refusing to register FIR for cognizable offense faces prosecution under IPC 166A (BNS 199).",
+    "tags": ["fir", "cognizable", "police duty", "section 154", "bnss 173"]
+  },
+  {
+    "case_title": "D.K. Basu v. State of West Bengal",
+    "citation": "(1997) 1 SCC 416",
+    "bench": "Kuldip Singh & A.S. Anand, JJ.",
+    "category": "Custodial Violence & Arrestee Human Rights",
+    "applicable_provisions": ["Article 21 & 22 Constitution", "Section 41B CrPC", "Section 36 BNSS"],
+    "ratio_decidendi": "Custodial violence and torture violate basic human dignity and Article 21. Prescribed 11 mandatory guidelines: (1) Arrest memo signed by arrestee and witness; (2) Right to have friend/relative informed within 8-12 hours; (3) Inspection memo noting pre-existing bodily injuries; (4) Medical examination every 48 hours; (5) Right to meet advocate during interrogation; (6) Police control room intimation within 12 hours.",
+    "key_safeguard": "Codified into criminal statute: breach constitutes contempt of court and criminal prosecution.",
+    "tags": ["custodial rights", "human rights", "arrest memo", "medical checkup", "interrogation"]
+  },
+  {
+    "case_title": "Arjun Panditrao Khotkar v. Kailash Kushanrao Gorantyal",
+    "citation": "(2020) 7 SCC 1 (3-Judge Bench)",
+    "bench": "R.F. Nariman, S. Ravindra Bhat, V. Ramasubramanian, JJ.",
+    "category": "Electronic Evidence & Section 65B/BSA 63 Admissibility",
+    "applicable_provisions": ["Section 65B Indian Evidence Act 1872", "Section 63 Bharatiya Sakshya Adhiniyam 2023"],
+    "ratio_decidendi": "Certificate under Section 65B(4) Evidence Act (now Section 63(4) BSA 2023) is an absolute condition precedent for the admissibility of electronic record by way of secondary evidence. If the original electronic device is not produced in court, the secondary evidence cannot be looked at in the absence of a contemporaneous signed certificate detailing the hash, device identifiers, and chain of custody.",
+    "key_safeguard": "Electronic records without valid digital certificates are legally inadmissible in criminal and civil trials.",
+    "tags": ["electronic evidence", "digital forensics", "section 65b", "bsa 63", "admissibility"]
+  },
+  {
+    "case_title": "Percept D'Mark (India) (P) Ltd. v. Zaheer Khan",
+    "citation": "(2006) 4 SCC 227",
+    "bench": "Santosh Hegde & Tarun Chatterjee, JJ.",
+    "category": "Commercial Contract Law & Non-Compete Covenants",
+    "applicable_provisions": ["Section 27 Indian Contract Act 1872"],
+    "ratio_decidendi": "Under Section 27 of the Indian Contract Act, an agreement in restraint of trade, business, or profession is void ab initio. The doctrine of restraint of trade applies unreservedly to post-termination contracts in employment and personal services. Unlike English common law, Indian law does not apply a 'rule of reasonableness' to post-employment restrictions; all post-contractual non-compete clauses are completely void.",
+    "key_safeguard": "Employers cannot enforce post-exit non-compete covenants against employees or freelancers in Indian courts.",
+    "tags": ["non-compete", "section 27", "contract act", "employment contract", "restraint of trade"]
+  }
+]

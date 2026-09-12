@@ -1,0 +1,315 @@
+[
+  {
+    "bns_section": "103(1)",
+    "ipc_section": "302",
+    "act": "Bharatiya Nyaya Sanhita 2023",
+    "ipc_act": "Indian Penal Code 1860",
+    "title": "Murder",
+    "category": "Offenses Affecting Life",
+    "cognizable": true,
+    "bailable": false,
+    "triable_by": "Court of Session",
+    "punishment": "Death or imprisonment for life, and fine",
+    "elements": [
+      "Act causing death of human being",
+      "Done with intention of causing death or bodily injury likely to cause death",
+      "Absence of exceptions (grave provocation, self-defense, sudden fight)"
+    ],
+    "keywords": ["murder", "kill", "homicide", "death", "stab", "shoot", "fatal"]
+  },
+  {
+    "bns_section": "103(2)",
+    "ipc_section": "302 (Read with 34/149)",
+    "act": "Bharatiya Nyaya Sanhita 2023",
+    "ipc_act": "Indian Penal Code 1860",
+    "title": "Murder by Mob / Lynching (Five or more persons)",
+    "category": "Offenses Affecting Life",
+    "cognizable": true,
+    "bailable": false,
+    "triable_by": "Court of Session",
+    "punishment": "Death or imprisonment for life, and fine",
+    "elements": [
+      "Five or more persons acting in concert",
+      "Murder committed on grounds of race, caste, community, sex, place of birth, or religion"
+    ],
+    "keywords": ["mob", "lynching", "vigilante", "group attack", "beaten to death"]
+  },
+  {
+    "bns_section": "105",
+    "ipc_section": "304",
+    "act": "Bharatiya Nyaya Sanhita 2023",
+    "ipc_act": "Indian Penal Code 1860",
+    "title": "Culpable Homicide not amounting to Murder",
+    "category": "Offenses Affecting Life",
+    "cognizable": true,
+    "bailable": false,
+    "triable_by": "Court of Session",
+    "punishment": "Imprisonment for life or up to 10 years, and fine",
+    "elements": [
+      "Causing death without premeditated intent",
+      "Under sudden fight or provocation without undue advantage"
+    ],
+    "keywords": ["culpable homicide", "sudden fight", "provocation", "accidental death fight"]
+  },
+  {
+    "bns_section": "106(1)",
+    "ipc_section": "304A",
+    "act": "Bharatiya Nyaya Sanhita 2023",
+    "ipc_act": "Indian Penal Code 1860",
+    "title": "Causing Death by Rash or Negligent Act",
+    "category": "Offenses Affecting Life",
+    "cognizable": true,
+    "bailable": true,
+    "triable_by": "Magistrate of First Class",
+    "punishment": "Imprisonment up to 5 years and fine",
+    "elements": [
+      "Act performed without criminal intent",
+      "Rashness or gross negligence resulting directly in death"
+    ],
+    "keywords": ["negligence", "rash driving", "medical negligence", "unintentional fatality"]
+  },
+  {
+    "bns_section": "106(2)",
+    "ipc_section": "304A (Enhanced)",
+    "act": "Bharatiya Nyaya Sanhita 2023",
+    "ipc_act": "Indian Penal Code 1860",
+    "title": "Hit and Run (Causing Death and Escaping without Reporting)",
+    "category": "Offenses Affecting Life",
+    "cognizable": true,
+    "bailable": false,
+    "triable_by": "Court of Session",
+    "punishment": "Imprisonment up to 10 years and fine",
+    "elements": [
+      "Causing death by rash or negligent driving",
+      "Escaping from the spot without reporting to police officer or magistrate soon after the incident"
+    ],
+    "keywords": ["hit and run", "fled the scene", "ran over", "escaped after crash"]
+  },
+  {
+    "bns_section": "115(2)",
+    "ipc_section": "323",
+    "act": "Bharatiya Nyaya Sanhita 2023",
+    "ipc_act": "Indian Penal Code 1860",
+    "title": "Voluntarily Causing Hurt",
+    "category": "Offenses Affecting Human Body",
+    "cognizable": false,
+    "bailable": true,
+    "triable_by": "Any Magistrate",
+    "punishment": "Imprisonment up to 1 year or fine up to ₹1,000 or both",
+    "elements": [
+      "Bodily pain, disease, or infirmity caused to any person",
+      "Act done with intention or knowledge of causing hurt"
+    ],
+    "keywords": ["hurt", "slap", "punch", "assault", "physical fight", "bruise"]
+  },
+  {
+    "bns_section": "117(2)",
+    "ipc_section": "325",
+    "act": "Bharatiya Nyaya Sanhita 2023",
+    "ipc_act": "Indian Penal Code 1860",
+    "title": "Voluntarily Causing Grievous Hurt",
+    "category": "Offenses Affecting Human Body",
+    "cognizable": true,
+    "bailable": true,
+    "triable_by": "Any Magistrate",
+    "punishment": "Imprisonment up to 7 years and fine",
+    "elements": [
+      "Emasculation, loss of sight, hearing, limb/joint, bone fracture or tooth dislocation",
+      "Severe bodily pain for 20+ days"
+    ],
+    "keywords": ["grievous hurt", "fracture", "severe injury", "hospitalized", "bone broken", "internal bleeding"]
+  },
+  {
+    "bns_section": "137(2)",
+    "ipc_section": "363",
+    "act": "Bharatiya Nyaya Sanhita 2023",
+    "ipc_act": "Indian Penal Code 1860",
+    "title": "Kidnapping",
+    "category": "Offenses Against Personal Liberty",
+    "cognizable": true,
+    "bailable": true,
+    "triable_by": "Magistrate of First Class",
+    "punishment": "Imprisonment up to 7 years and fine",
+    "elements": [
+      "Taking or enticing any minor or person of unsound mind out of lawful guardianship",
+      "Without consent of guardian"
+    ],
+    "keywords": ["kidnapping", "abduction", "abduct", "child abduction", "taken away"]
+  },
+  {
+    "bns_section": "303(2)",
+    "ipc_section": "379",
+    "act": "Bharatiya Nyaya Sanhita 2023",
+    "ipc_act": "Indian Penal Code 1860",
+    "title": "Theft",
+    "category": "Offenses Against Property",
+    "cognizable": true,
+    "bailable": false,
+    "triable_by": "Any Magistrate",
+    "punishment": "Imprisonment up to 3 years or fine or both (Community service for petty theft under ₹5,000 on first offense)",
+    "elements": [
+      "Dishonest intention to take movable property",
+      "Out of possession of any person without consent",
+      "Moving of property in order to effect taking"
+    ],
+    "keywords": ["theft", "stole", "stealing", "pickpocket", "property stolen", "laptop stolen", "money taken"]
+  },
+  {
+    "bns_section": "309(4)",
+    "ipc_section": "392",
+    "act": "Bharatiya Nyaya Sanhita 2023",
+    "ipc_act": "Indian Penal Code 1860",
+    "title": "Robbery",
+    "category": "Offenses Against Property",
+    "cognizable": true,
+    "bailable": false,
+    "triable_by": "Magistrate of First Class",
+    "punishment": "Rigorous imprisonment up to 10 years and fine; highway robbery up to 14 years",
+    "elements": [
+      "Theft or extortion accomplished by causing or attempting to cause death, hurt, or wrongful restraint",
+      "Fear of instant death or hurt"
+    ],
+    "keywords": ["robbery", "armed robbery", "mugging", "at gunpoint", "knife point", "threatened to kill for money"]
+  },
+  {
+    "bns_section": "316(2)",
+    "ipc_section": "406",
+    "act": "Bharatiya Nyaya Sanhita 2023",
+    "ipc_act": "Indian Penal Code 1860",
+    "title": "Criminal Breach of Trust",
+    "category": "Offenses Against Property",
+    "cognizable": true,
+    "bailable": false,
+    "triable_by": "Magistrate of First Class",
+    "punishment": "Imprisonment up to 5 years or fine or both",
+    "elements": [
+      "Entrustment of property or dominion over property",
+      "Dishonest misappropriation or conversion to own use",
+      "Violation of legal direction or contract"
+    ],
+    "keywords": ["breach of trust", "misappropriation", "embezzlement", "company funds stolen", "fiduciary duty violated"]
+  },
+  {
+    "bns_section": "318(4)",
+    "ipc_section": "420",
+    "act": "Bharatiya Nyaya Sanhita 2023",
+    "ipc_act": "Indian Penal Code 1860",
+    "title": "Cheating and Dishonestly Inducing Delivery of Property",
+    "category": "Offenses Against Property",
+    "cognizable": true,
+    "bailable": false,
+    "triable_by": "Magistrate of First Class",
+    "punishment": "Imprisonment up to 7 years and fine",
+    "elements": [
+      "Deception of any person fraudulently or dishonestly",
+      "Inducing person to deliver property or make/alter valuable security",
+      "Fraudulent intent existing from inception"
+    ],
+    "keywords": ["cheating", "fraud", "scam", "crypto scam", "defrauded", "420", "deception", "false promise"]
+  },
+  {
+    "bns_section": "336(3)",
+    "ipc_section": "468",
+    "act": "Bharatiya Nyaya Sanhita 2023",
+    "ipc_act": "Indian Penal Code 1860",
+    "title": "Forgery for Purpose of Cheating",
+    "category": "Offenses Relating to Documents",
+    "cognizable": true,
+    "bailable": false,
+    "triable_by": "Magistrate of First Class",
+    "punishment": "Imprisonment up to 7 years and fine",
+    "elements": [
+      "Making false document or electronic record",
+      "Intention that document forged shall be used for cheating"
+    ],
+    "keywords": ["forgery", "fake document", "forged signature", "counterfeit stamp", "tampered paperwork"]
+  },
+  {
+    "bns_section": "351(2)",
+    "ipc_section": "506",
+    "act": "Bharatiya Nyaya Sanhita 2023",
+    "ipc_act": "Indian Penal Code 1860",
+    "title": "Criminal Intimidation",
+    "category": "Criminal Intimidation & Defamation",
+    "cognizable": false,
+    "bailable": true,
+    "triable_by": "Any Magistrate",
+    "punishment": "Imprisonment up to 2 years or fine or both; up to 7 years if threat of death/grievous hurt",
+    "elements": [
+      "Threatening injury to person, reputation, or property",
+      "Intent to cause alarm or force unlawful act"
+    ],
+    "keywords": ["threat", "intimidation", "death threat", "extort under threat", "blackmail"]
+  },
+  {
+    "bns_section": "356(2)",
+    "ipc_section": "500",
+    "act": "Bharatiya Nyaya Sanhita 2023",
+    "ipc_act": "Indian Penal Code 1860",
+    "title": "Defamation",
+    "category": "Criminal Intimidation & Defamation",
+    "cognizable": false,
+    "bailable": true,
+    "triable_by": "Court of Session (if constitutional dignitary) or Magistrate",
+    "punishment": "Simple imprisonment up to 2 years or fine or both or community service",
+    "elements": [
+      "Making or publishing imputation concerning any person",
+      "Intending to harm or knowing it will harm reputation",
+      "Without falling in 10 statutory exceptions (truth for public good, fair comment)"
+    ],
+    "keywords": ["defamation", "slander", "libel", "reputation damaged", "false public statement"]
+  },
+  {
+    "bns_section": "61(2)",
+    "ipc_section": "120B",
+    "act": "Bharatiya Nyaya Sanhita 2023",
+    "ipc_act": "Indian Penal Code 1860",
+    "title": "Criminal Conspiracy",
+    "category": "Inchoate Offenses",
+    "cognizable": true,
+    "bailable": false,
+    "triable_by": "Court that tries main offense",
+    "punishment": "Treated same as abetment of offense",
+    "elements": [
+      "Agreement between two or more persons",
+      "To commit an illegal act or act done by illegal means"
+    ],
+    "keywords": ["conspiracy", "conspired", "colluded", "joint criminal plan", "premeditated conspiracy"]
+  },
+  {
+    "bns_section": "111",
+    "ipc_section": "Special Acts (MCOCA/PCOCA) incorporated",
+    "act": "Bharatiya Nyaya Sanhita 2023",
+    "ipc_act": "Indian Penal Code 1860",
+    "title": "Organized Crime (Syndicates, Extortion, Land Grabbing)",
+    "category": "Offenses Affecting Public Order",
+    "cognizable": true,
+    "bailable": false,
+    "triable_by": "Special Court / Court of Session",
+    "punishment": "Death or life imprisonment if death caused; minimum 5 years up to life, fine >= ₹5,00,000",
+    "elements": [
+      "Continuing unlawful activity by member of crime syndicate",
+      "Use of violence, threat of violence, intimidation, or coercion",
+      "To obtain direct or indirect material benefit"
+    ],
+    "keywords": ["organized crime", "syndicate", "mafia", "gang", "extortion ring", "contract killing"]
+  },
+  {
+    "bns_section": "152",
+    "ipc_section": "124A (Sedition Replaced)",
+    "act": "Bharatiya Nyaya Sanhita 2023",
+    "ipc_act": "Indian Penal Code 1860",
+    "title": "Act Endangering Sovereignty, Unity and Integrity of India",
+    "category": "Offenses Against State",
+    "cognizable": true,
+    "bailable": false,
+    "triable_by": "Court of Session",
+    "punishment": "Imprisonment for life or up to 7 years, and fine",
+    "elements": [
+      "Purposely exciting or attempting to excite secession or armed rebellion",
+      "Subversive activities endangering sovereignty or unity of India",
+      "Distinguished from peaceful constitutional dissent"
+    ],
+    "keywords": ["sovereignty", "secession", "armed rebellion", "subversive", "integrity of india"]
+  }
+]

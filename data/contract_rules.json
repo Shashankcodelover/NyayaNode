@@ -1,0 +1,62 @@
+[
+  {
+    "id": "RULE_NON_COMPETE_POST_EXIT",
+    "name": "Post-Employment Non-Compete Restriction",
+    "severity": "CRITICAL",
+    "statute": "Section 27, Indian Contract Act, 1872",
+    "precedent": "Percept D'Mark (India) v. Zaheer Khan (2006) 4 SCC 227",
+    "pattern": "(shall not|will not|agrees not to)\\s+(engage in|work for|consult with|compete with|enter into employment with)\\s+(any competitor|any competing business|similar business).*?(for a period of|within)\\s*(\\d+|one|two|three|12|24|36)\\s*(months|years|year)",
+    "description": "Clause restrains an individual from practicing their profession or engaging in employment after contract termination. Under Section 27 Indian Contract Act and Supreme Court precedent, all post-termination non-compete clauses are void ab initio in India.",
+    "remedy": "Replace with strict confidentiality protection (NDAs) and non-solicitation of active clients/trade secrets, rather than blanket prohibition on livelihood."
+  },
+  {
+    "id": "RULE_UNILATERAL_INDEMNITY",
+    "name": "One-Sided Uncapped Indemnification",
+    "severity": "HIGH",
+    "statute": "Section 124 & 125, Indian Contract Act, 1872",
+    "precedent": "Gajanan Moreshwar Parelkar v. Moreshwar Madan Mantri (AIR 1942 Bom 302)",
+    "pattern": "indemnify[\\s,]+defend[\\s,]+and hold harmless.*?(against any and all|all claims|all liabilities|losses|damages|attorneys'? fees)(?!.*?mutual|reciprocal)",
+    "description": "Party imposes blanket obligation to indemnify without reciprocal obligation from counterparty and without liability cap or exclusion of consequential damages.",
+    "remedy": "Make indemnity bilateral, cap liability at total contract value or fees paid in preceding 12 months, and explicitly carve out indirect/consequential damages."
+  },
+  {
+    "id": "RULE_PUNITIVE_LIQUIDATED_DAMAGES",
+    "name": "Punitive Liquidated Damages / Penalty Clause",
+    "severity": "HIGH",
+    "statute": "Section 74, Indian Contract Act, 1872",
+    "precedent": "ONGC v. Saw Pipes Ltd. (2003) 5 SCC 705 & Kailash Nath Associates v. DDA (2015) 4 SCC 136",
+    "pattern": "(liquidated damages|penalty|forfeit).*?(exceeding|sum of|percentage of).*?(shall be deemed fair|regardless of actual proof of loss|irrevocably forfeited)",
+    "description": "Contracts stipulating unreasonable stipulated damages without relation to genuine pre-estimate of loss. Under Section 74, Indian courts grant only 'reasonable compensation' not exceeding the penalty.",
+    "remedy": "Explicitly state that liquidated damages represent genuine pre-estimate of actual loss, and require proof of genuine injury where loss is quantifiable."
+  },
+  {
+    "id": "RULE_UNILATERAL_ARBITRATOR",
+    "name": "Unilateral Sole Arbitrator Appointment",
+    "severity": "CRITICAL",
+    "statute": "Section 12(5) & Seventh Schedule, Arbitration and Conciliation Act, 1996",
+    "precedent": "Perkins Eastman Architects DPC v. HSCC (India) Ltd. (2020) 20 SCC 760",
+    "pattern": "(sole arbitrator|arbitrator)\\s+(appointed exclusively by|nominated solely by|designated by the company|at the sole discretion of)",
+    "description": "Clause grants one party exclusive unilateral authority to appoint the sole arbitrator. Invalidated by Supreme Court under Section 12(5) for lack of independence and impartiality.",
+    "remedy": "Provide for mutual agreement on sole arbitrator within 30 days, failing which appointment through High Court under Section 11(6), or institutional arbitration (DIAC/MCIA)."
+  },
+  {
+    "id": "RULE_PERPETUAL_IP_ASSIGNMENT",
+    "name": "Overbroad Assignment of Pre-Existing & Personal IP",
+    "severity": "MEDIUM",
+    "statute": "Section 19(4) & 19(5), Indian Copyright Act, 1957",
+    "precedent": "Indian Performing Right Society Ltd. v. Eastern India Motion Pictures (1977) 2 SCC 820",
+    "pattern": "(assigns and transfers|hereby assigns).*?(all inventions|any and all ideas|intellectual property).*?(whether or not related to|conceived at any time|outside working hours)",
+    "description": "Attempts to capture inventions created outside working hours without company resources, or lacks automatic lapse provisions under Section 19(5) Copyright Act.",
+    "remedy": "Limit IP assignment strictly to work product developed in direct scope of employment/contract, using company assets."
+  },
+  {
+    "id": "RULE_UNILATERAL_TERMINATION",
+    "name": "Asymmetrical Termination for Convenience",
+    "severity": "MEDIUM",
+    "statute": "Section 14, Specific Relief Act, 1963",
+    "precedent": "Central Inland Water Transport Corp v. Brojo Nath Ganguly (AIR 1986 SC 1571)",
+    "pattern": "(company|client|employer)\\s+may terminate.*?(at its sole convenience|without cause|immediately).*?(contractor|employee|service provider)\\s+(shall not have the right|requires.*?(notice of\\s*(\\d+|60|90)\\s*days))",
+    "description": "One party can terminate instantly without cause, while the counterparty is locked into onerous notice periods or prohibited from exit. Unconscionable bargain under Indian jurisprudence.",
+    "remedy": "Establish reciprocal notice periods (e.g. 30 days written notice) for termination for convenience."
+  }
+]
