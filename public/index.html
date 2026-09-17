@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -86,6 +86,12 @@
       </button>
       <button class="nav-tab-btn" data-tab="tab-moot">
         <span>⚖️</span> Moot Courtroom Simulator
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-mesh">
+        <span>🌐</span> Jurisprudence Mesh
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-ingestion">
+        <span>📥</span> Batch Ingestion
       </button>
     </nav>
   </div>
@@ -359,6 +365,124 @@
 
         <div id="moot-case-details">
           <!-- Dynamically populated -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 7: Jurisprudence Mesh & Precedent Corridors -->
+    <div id="tab-mesh" class="tab-pane">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">🌐 Jurisprudence Topology Mesh & Precedent Corridors</div>
+            <div class="panel-subtitle">Relational statutory bridges, Supreme Court precedent binding force, and live procedural compliance</div>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn btn-primary" id="btn-open-provision-corridor" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+              + Provision Precedent Corridor
+            </button>
+          </div>
+        </div>
+
+        <!-- Telemetry Cards -->
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.5rem;" id="mesh-telemetry-strip">
+          <div class="metric-card" style="padding: 1rem;">
+            <div>
+              <div class="metric-val" id="mesh-active-corridors" style="color: #60a5fa;">5</div>
+              <div class="metric-lbl">Active Precedent Corridors</div>
+            </div>
+          </div>
+          <div class="metric-card" style="padding: 1rem;">
+            <div>
+              <div class="metric-val" id="mesh-avg-adherence" style="color: #34d399;">99.5%</div>
+              <div class="metric-lbl">Avg Statutory Adherence</div>
+            </div>
+          </div>
+          <div class="metric-card" style="padding: 1rem;">
+            <div>
+              <div class="metric-val" id="mesh-total-statutes" style="color: #fbbf24;">5</div>
+              <div class="metric-lbl">Total Statutory Rules</div>
+            </div>
+          </div>
+          <div class="metric-card" style="padding: 1rem;">
+            <div>
+              <div class="metric-val" id="mesh-regime" style="color: #c084fc; font-size: 1.1rem; margin-top: 4px;">BNS 2023</div>
+              <div class="metric-lbl">Statutory Regime</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Corridors Table -->
+        <h4 style="font-size: 0.95rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 0.75rem;">
+          Active Statutory & Precedent Corridors
+        </h4>
+        <div id="corridors-list" style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem;">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Statutes Roster -->
+        <h4 style="font-size: 0.95rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 0.75rem;">
+          Statutory Offenses & Trial Courts
+        </h4>
+        <div id="statutes-roster-list" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 8: Enterprise Batch Ingestion Studio -->
+    <div id="tab-ingestion" class="tab-pane">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">📥 Enterprise Batch Ingestion & Statutory Purge Studio</div>
+            <div class="panel-subtitle">Multi-entity ETL pipeline for Statutory Mappings (BNS/IPC) and Supreme Court Precedent Corridors</div>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn" id="btn-universal-purge-nyaya" style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); color: #f87171; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700;">
+              🗑️ Universal Purge
+            </button>
+          </div>
+        </div>
+
+        <!-- Entity and Format Selection -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.75rem;">
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn" id="ingest-entity-statutes" style="background: rgba(59, 130, 246, 0.2); border: 1px solid #3b82f6; color: #93c5fd; padding: 0.4rem 0.9rem; font-size: 0.85rem; font-weight: 700;">
+              📖 Statutory Mappings
+            </button>
+            <button class="btn" id="ingest-entity-corridors" style="background: #1e2433; border: 1px solid #2a3147; color: #94a3b8; padding: 0.4rem 0.9rem; font-size: 0.85rem; font-weight: 700;">
+              🌐 Precedent Corridors
+            </button>
+          </div>
+
+          <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <button class="btn" id="ingest-fmt-csv" style="background: rgba(16, 185, 129, 0.2); border: 1px solid #10b981; color: #6ee7b7; padding: 0.4rem 0.75rem; font-size: 0.8rem; font-weight: 700;">
+              CSV Format
+            </button>
+            <button class="btn" id="ingest-fmt-json" style="background: #1e2433; border: 1px solid #2a3147; color: #94a3b8; padding: 0.4rem 0.75rem; font-size: 0.8rem; font-weight: 700;">
+              JSON Schema
+            </button>
+            <button class="btn" id="btn-reset-template" style="background: transparent; border: 1px dashed #475569; color: #94a3b8; padding: 0.4rem 0.75rem; font-size: 0.8rem;">
+              🔄 Reset Template
+            </button>
+          </div>
+        </div>
+
+        <!-- Monospace Buffer -->
+        <div style="margin-bottom: 1rem;">
+          <textarea id="ingest-payload-buffer" spellcheck="false" style="width: 100%; min-height: 220px; background: #070a12; border: 1px solid #1f273b; border-radius: 8px; padding: 1rem; font-family: monospace; font-size: 0.85rem; color: #38bdf8; line-height: 1.5; resize: vertical; box-sizing: border-box;"></textarea>
+          <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #64748b; margin-top: 0.4rem;">
+            <span id="buffer-stats">Buffer Ready</span>
+            <span id="target-endpoint">Target: /api/topology/statutes/upload</span>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div style="display: flex; justify-content: flex-end;">
+          <button class="btn btn-primary" id="btn-execute-ingestion" style="padding: 0.6rem 1.5rem; font-size: 0.9rem; font-weight: 700;">
+            ⚡ Execute Batch Ingestion
+          </button>
         </div>
       </div>
     </div>

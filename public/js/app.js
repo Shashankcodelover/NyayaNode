@@ -1,4 +1,4 @@
-﻿// NyayaNode Interactive Frontend Logic
+// NyayaNode Interactive Frontend Logic
 
 let allStatutes = [];
 let proceduralMap = [];
@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   setupContractAuditor();
   setupEvidenceVault();
   setupMootCourt();
+  setupJurisprudenceMesh();
+  setupBatchIngestion();
 });
 
 // Tab Switcher
@@ -602,4 +604,318 @@ function showToast(msg) {
   setTimeout(() => {
     toast.style.display = 'none';
   }, 3500);
+}
+
+// === ENTERPRISE JURISPRUDENCE TOPOLOGY MESH ===
+async function setupJurisprudenceMesh() {
+  const corridorsList = document.getElementById('corridors-list');
+  const statutesRoster = document.getElementById('statutes-roster-list');
+  const provisionBtn = document.getElementById('btn-open-provision-corridor');
+
+  async function refreshMesh() {
+    try {
+      const [corridorRes, statutesRes] = await Promise.all([
+        fetch('/api/topology/corridors').then(r => r.json()),
+        fetch('/api/topology/statutes').then(r => r.json())
+      ]);
+
+      const corridors = corridorRes.data?.corridors || [];
+      const metrics = corridorRes.data?.metrics || {};
+      const statutes = statutesRes.data || [];
+
+      // Update telemetry
+      const activeEl = document.getElementById('mesh-active-corridors');
+      const adhEl = document.getElementById('mesh-avg-adherence');
+      const totalEl = document.getElementById('mesh-total-statutes');
+
+      if (activeEl) activeEl.textContent = metrics.activeCorridors ?? corridors.length;
+      if (adhEl) adhEl.textContent = `${metrics.avgStatutoryAdherencePct ?? 99.5}%`;
+      if (totalEl) totalEl.textContent = statutes.length;
+
+      // Render Corridors
+      if (corridorsList) {
+        corridorsList.innerHTML = corridors.map(c => `
+          <div style="background: #11141e; border: 1px solid #1e2433; border-radius: 8px; padding: 1rem; display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; flex-direction: column; gap: 0.35rem; flex: 1;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 0.2rem 0.6rem; border-radius: 4px; font-weight: 700; font-size: 0.8rem;">
+                  ${c.sourceStatute}
+                </span>
+                <span style="color: #64748b;">➔</span>
+                <span style="background: rgba(139, 92, 246, 0.15); color: #c084fc; border: 1px solid rgba(139, 92, 246, 0.3); padding: 0.2rem 0.6rem; border-radius: 4px; font-weight: 700; font-size: 0.8rem;">
+                  ${c.targetStatute}
+                </span>
+                <span style="background: rgba(16, 185, 129, 0.15); color: #34d399; font-size: 0.75rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px;">
+                  ${c.statutoryAdherencePct}% Adherence
+                </span>
+              </div>
+              <div style="font-size: 0.82rem; color: #94a3b8;">
+                <strong style="color: #cbd5e1;">Precedent:</strong> ${c.bindingPrecedent} (${c.jurisdictionLevel})
+              </div>
+              <div style="font-size: 0.78rem; color: #64748b; font-family: monospace;">
+                Protocol: ${c.proceduralProtocol} | Force: ${c.precedentForce}
+              </div>
+            </div>
+            <button class="btn btn-sever-corridor" data-id="${c.id}" style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); color: #f87171; padding: 0.35rem 0.85rem; font-size: 0.75rem; font-weight: 700;">
+              Sever Corridor
+            </button>
+          </div>
+        `).join('');
+
+        // Wire sever buttons
+        document.querySelectorAll('.btn-sever-corridor').forEach(btn => {
+          btn.addEventListener('click', async (e) => {
+            const id = e.target.getAttribute('data-id');
+            if (confirm(`Sever jurisprudence corridor ${id}? This halts automated precedent binding.`)) {
+              await fetch(`/api/topology/corridors/${id}`, { method: 'DELETE' });
+              showToast(`Corridor ${id} severed.`);
+              refreshMesh();
+            }
+          });
+        });
+      }
+
+      // Render Statutes Roster
+      if (statutesRoster) {
+        statutesRoster.innerHTML = statutes.map(s => `
+          <div style="background: #11141e; border: 1px solid #1e2433; border-radius: 8px; padding: 0.85rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <strong style="color: #f8fafc; font-size: 0.85rem;">${s.offenseTitle}</strong>
+                <button class="btn-delete-statute" data-bns="${encodeURIComponent(s.bnsSection)}" style="background: none; border: none; color: #ef4444; cursor: pointer; font-size: 0.8rem;">
+                  🗑️
+                </button>
+              </div>
+              <div style="font-size: 0.75rem; color: #60a5fa; margin-top: 0.25rem;">${s.bnsSection} ↔ ${s.ipcSection}</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #64748b; margin-top: 0.6rem;">
+              <span style="color: ${s.bailability === 'Bailable' ? '#34d399' : '#f87171'}; font-weight: 600;">${s.bailability}</span>
+              <span>${s.court}</span>
+            </div>
+          </div>
+        `).join('');
+
+        // Wire delete buttons
+        document.querySelectorAll('.btn-delete-statute').forEach(btn => {
+          btn.addEventListener('click', async (e) => {
+            const bns = e.target.getAttribute('data-bns');
+            if (confirm(`Cascade delete statute ${decodeURIComponent(bns)} and sever all connected corridors?`)) {
+              await fetch(`/api/topology/statutes/${bns}`, { method: 'DELETE' });
+              showToast(`Statute deleted with cascading corridor integrity.`);
+              refreshMesh();
+            }
+          });
+        });
+      }
+    } catch (err) {
+      console.error('Failed to refresh jurisprudence mesh:', err);
+    }
+  }
+
+  if (provisionBtn) {
+    provisionBtn.addEventListener('click', async () => {
+      const src = prompt('Enter Source Statute (e.g. BNS 111 Organized Crime):', 'BNS 111 Organized Crime');
+      if (!src) return;
+      const tgt = prompt('Enter Target Procedural Court (e.g. Designated Special Court):', 'Designated Special Court');
+      if (!tgt) return;
+      const prec = prompt('Enter Binding Precedent (e.g. State v. Bharat Shanti Lal (2008)):', 'State v. Bharat Shanti Lal (2008)');
+
+      await fetch('/api/topology/corridors', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          sourceStatute: src,
+          targetStatute: tgt,
+          bindingPrecedent: prec || 'Supreme Court Ratio',
+          statutoryAdherencePct: 99.6
+        })
+      });
+      showToast('Jurisprudence corridor provisioned successfully.');
+      refreshMesh();
+    });
+  }
+
+  refreshMesh();
+}
+
+// === ENTERPRISE BATCH INGESTION & PURGE STUDIO ===
+function setupBatchIngestion() {
+  let currentEntity = 'statutes';
+  let currentFormat = 'csv';
+
+  const TEMPLATES_NYAYA = {
+    statutes: {
+      endpoint: '/api/topology/statutes/upload',
+      csv: `bns,ipc,title,bail,cognizable,punish,court
+BNS 64,IPC 376,Rape,Non-Bailable,true,Rigorous Imprisonment not less than 10 years,Court of Session
+BNS 303(2),IPC 379,Theft,Bailable,true,Imprisonment up to 3 years,Any Magistrate
+BNS 111(1),New (MCOCA),Organized Crime Syndicate Operation,Non-Bailable,true,Death or Life Imprisonment,Special Court / Session`,
+      json: JSON.stringify([
+        {
+          bnsSection: "BNS 64",
+          ipcSection: "IPC 376",
+          offenseTitle: "Rape",
+          bailability: "Non-Bailable",
+          cognizable: true,
+          punishment: "Rigorous Imprisonment not less than 10 years",
+          court: "Court of Session"
+        },
+        {
+          bnsSection: "BNS 303(2)",
+          ipcSection: "IPC 379",
+          offenseTitle: "Theft",
+          bailability: "Bailable",
+          cognizable: true,
+          punishment: "Imprisonment up to 3 years",
+          court: "Any Magistrate"
+        }
+      ], null, 2)
+    },
+    corridors: {
+      endpoint: '/api/topology/corridors/upload',
+      csv: `source,target,jurisdiction,precedent,adherence,protocol
+BNS 64,Court of Session,Sessions Court,Nirbhaya Ratio (2017) 6 SCC 1,100.0,Sec 183 BNSS
+BNS 303,Lok Adalat,Magistrate,Compounding under BNSS 359,98.0,Pre-Litigation Settlement
+BNS 111,Special MCOCA Bench,Designated Special Court,Bharat Shanti Lal (2008),99.7,BNSS Sec 250`,
+      json: JSON.stringify([
+        {
+          sourceStatute: "BNS 64 Rape",
+          targetStatute: "Court of Session Trial",
+          jurisdictionLevel: "Sessions Court",
+          bindingPrecedent: "Nirbhaya Ratio (2017) 6 SCC 1",
+          statutoryAdherencePct: 100.0,
+          proceduralProtocol: "Sec 183 BNSS"
+        }
+      ], null, 2)
+    }
+  };
+
+  const buffer = document.getElementById('ingest-payload-buffer');
+  const bufferStats = document.getElementById('buffer-stats');
+  const targetEndpoint = document.getElementById('target-endpoint');
+  const btnStatutes = document.getElementById('ingest-entity-statutes');
+  const btnCorridors = document.getElementById('ingest-entity-corridors');
+  const btnCsv = document.getElementById('ingest-fmt-csv');
+  const btnJson = document.getElementById('ingest-fmt-json');
+  const btnReset = document.getElementById('btn-reset-template');
+  const btnExecute = document.getElementById('btn-execute-ingestion');
+  const btnPurge = document.getElementById('btn-universal-purge-nyaya');
+
+  function updateBuffer() {
+    const tpl = TEMPLATES_NYAYA[currentEntity];
+    if (buffer) buffer.value = currentFormat === 'csv' ? tpl.csv : tpl.json;
+    if (targetEndpoint) targetEndpoint.textContent = `Target: ${tpl.endpoint}`;
+    updateStats();
+  }
+
+  function updateStats() {
+    if (!buffer || !bufferStats) return;
+    const lines = buffer.value.split('\n').length;
+    const chars = buffer.value.length;
+    bufferStats.textContent = `${lines} lines | ${chars} characters`;
+  }
+
+  if (buffer) buffer.addEventListener('input', updateStats);
+
+  if (btnStatutes) {
+    btnStatutes.addEventListener('click', () => {
+      currentEntity = 'statutes';
+      btnStatutes.style.background = 'rgba(59, 130, 246, 0.2)';
+      btnStatutes.style.borderColor = '#3b82f6';
+      btnStatutes.style.color = '#93c5fd';
+      if (btnCorridors) {
+        btnCorridors.style.background = '#1e2433';
+        btnCorridors.style.borderColor = '#2a3147';
+        btnCorridors.style.color = '#94a3b8';
+      }
+      updateBuffer();
+    });
+  }
+
+  if (btnCorridors) {
+    btnCorridors.addEventListener('click', () => {
+      currentEntity = 'corridors';
+      btnCorridors.style.background = 'rgba(59, 130, 246, 0.2)';
+      btnCorridors.style.borderColor = '#3b82f6';
+      btnCorridors.style.color = '#93c5fd';
+      if (btnStatutes) {
+        btnStatutes.style.background = '#1e2433';
+        btnStatutes.style.borderColor = '#2a3147';
+        btnStatutes.style.color = '#94a3b8';
+      }
+      updateBuffer();
+    });
+  }
+
+  if (btnCsv) {
+    btnCsv.addEventListener('click', () => {
+      currentFormat = 'csv';
+      btnCsv.style.background = 'rgba(16, 185, 129, 0.2)';
+      btnCsv.style.borderColor = '#10b981';
+      btnCsv.style.color = '#6ee7b7';
+      if (btnJson) {
+        btnJson.style.background = '#1e2433';
+        btnJson.style.borderColor = '#2a3147';
+        btnJson.style.color = '#94a3b8';
+      }
+      updateBuffer();
+    });
+  }
+
+  if (btnJson) {
+    btnJson.addEventListener('click', () => {
+      currentFormat = 'json';
+      btnJson.style.background = 'rgba(16, 185, 129, 0.2)';
+      btnJson.style.borderColor = '#10b981';
+      btnJson.style.color = '#6ee7b7';
+      if (btnCsv) {
+        btnCsv.style.background = '#1e2433';
+        btnCsv.style.borderColor = '#2a3147';
+        btnCsv.style.color = '#94a3b8';
+      }
+      updateBuffer();
+    });
+  }
+
+  if (btnReset) {
+    btnReset.addEventListener('click', updateBuffer);
+  }
+
+  if (btnExecute) {
+    btnExecute.addEventListener('click', async () => {
+      if (!buffer || !buffer.value.trim()) return;
+      const endpoint = TEMPLATES_NYAYA[currentEntity].endpoint;
+      const isCsv = currentFormat === 'csv';
+
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': isCsv ? 'text/csv' : 'application/json' },
+          body: isCsv ? buffer.value : JSON.stringify(JSON.parse(buffer.value))
+        });
+        const data = await res.json();
+        if (res.ok) {
+          showToast(data.message || 'Batch ingested successfully into jurisprudence mesh!');
+          setupJurisprudenceMesh();
+        } else {
+          showToast(`Error: ${data.error}`);
+        }
+      } catch (err) {
+        showToast(`Ingestion error: ${err.message}`);
+      }
+    });
+  }
+
+  if (btnPurge) {
+    btnPurge.addEventListener('click', async () => {
+      if (!confirm(`⚠️ UNIVERSAL PURGE WARNING\nPurge all ${currentEntity} and sever associated precedent corridors?`)) return;
+      const endpoint = currentEntity === 'statutes' ? '/api/topology/statutes' : '/api/topology/corridors';
+      const res = await fetch(endpoint, { method: 'DELETE' });
+      const data = await res.json();
+      showToast(data.message || 'Universal deletion completed.');
+      setupJurisprudenceMesh();
+    });
+  }
+
+  updateBuffer();
 }
