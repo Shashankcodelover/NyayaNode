@@ -100,3 +100,15 @@ node server.js
 
 ## 📜 License
 MIT License. Open-source jurisprudence and legal intelligence platform.
+
+
+## User Flow Verification
+
+![User Flow](docs/nyayanode_contract_audit_verified.png)
+![User Flow](docs/nyayanode_evidence_vault_verified.png)
+![User Flow](docs/nyayanode_fir_analysis_verified.png)
+![User Flow](docs/nyayanode_home_verified.png)
+![User Flow](docs/nyayanode_matrix_verified.png)
+![User Flow](docs/nyayanode_moot_court_verified.png)
+![User Flow](docs/nyayanode_neuromorphic_verified.png)
+
