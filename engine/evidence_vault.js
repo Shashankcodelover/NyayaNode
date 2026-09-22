@@ -1,6 +1,6 @@
-﻿const crypto = require('crypto');
+const crypto = require('crypto');
 
-// In-memory decentralized evidence ledger
+// In-memory evidence custody ledger
 const evidenceLedger = [];
 
 class EvidenceVault {

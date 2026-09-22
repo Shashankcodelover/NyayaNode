@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'online',
-    system: 'NyayaNode AI Jurisprudence & Legal Intelligence Network',
+    system: 'NyayaNode Legal Intelligence Network',
     version: '1.0.0',
     timestamp: new Date().toISOString(),
     port: PORT

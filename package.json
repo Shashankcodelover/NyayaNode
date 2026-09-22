@@ -1,7 +1,7 @@
-﻿{
+{
   "name": "nyayanode",
   "version": "1.0.0",
-  "description": "AI-Powered Decentralized Jurisprudence & Legal Intelligence Network",
+  "description": "Legal intelligence platform providing BNS-IPC statutory mapping, FIR assessment, contract clause auditing, and Section 63 BSA evidence hashing",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
