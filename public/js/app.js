@@ -642,7 +642,7 @@ async function setupJurisprudenceMesh() {
                   ${c.sourceStatute}
                 </span>
                 <span style="color: #64748b;">➔</span>
-                <span style="background: rgba(139, 92, 246, 0.15); color: #c084fc; border: 1px solid rgba(139, 92, 246, 0.3); padding: 0.2rem 0.6rem; border-radius: 4px; font-weight: 700; font-size: 0.8rem;">
+                <span style="background: rgba(139, 92, 246, 0.15); color: #60a5fa; border: 1px solid rgba(139, 92, 246, 0.3); padding: 0.2rem 0.6rem; border-radius: 4px; font-weight: 700; font-size: 0.8rem;">
                   ${c.targetStatute}
                 </span>
                 <span style="background: rgba(16, 185, 129, 0.15); color: #34d399; font-size: 0.75rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px;">
